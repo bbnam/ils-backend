@@ -5,9 +5,7 @@ import com.nambb.socialindex.application.port.in.category.CreateCategoryUseCase;
 import com.nambb.socialindex.application.port.out.persistence.CategoryRepository;
 import com.nambb.socialindex.model.category.Category;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
 public class CreateCategoryService implements CreateCategoryUseCase {
 
@@ -15,6 +13,9 @@ public class CreateCategoryService implements CreateCategoryUseCase {
 
     @Override
     public Category addCategory(CategoryCreate categoryCreate) {
-        return null;
+        Category category = new Category();
+        category.setName(categoryCreate.getName());
+        category.setCreateId(categoryCreate.getCreatorId());
+        return categoryRepository.save(category);
     }
 }
