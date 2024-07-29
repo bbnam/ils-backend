@@ -1,4 +1,4 @@
-package com.nambb.socialindex.application.port.out;
+package com.nambb.socialindex.application.port.out.persistence;
 
 import com.nambb.socialindex.model.category.Category;
 
